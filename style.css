@@ -1,0 +1,102 @@
+/* =====================================================
+   STÍLUS - tartalom:
+   1. Alap (színek, betűk, menü, közös elemek)
+   2. Szekciók: kezdőlap, történet, pillanatok, 12 ok,
+      emlékezz erre, jövő, záró üzenet
+   3. Extrák: animációk, nyitóképernyő, lebegő szívek
+   4. Telefonos nézet (@media)
+   Színek/betűk: a :root blokkban (--rose = fő szín)
+   ===================================================== */
+:root{--dark:#141011;--dark2:#1d1618;--cream:#f8e9e4;--paper:#fff7f4;--rose:#b4505e;--rose2:#e9b9b6;--ink:#3a2a2c;
+--hand:'Caveat','Segoe Script',cursive;--sans:'Lato',system-ui,sans-serif;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:center;gap:22px;padding:calc(14px + env(safe-area-inset-top,0px)) 20px 14px;background:rgba(20,16,17,.55);backdrop-filter:blur(8px);font-size:14px}
+nav a{color:#fff;text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .logo{color:var(--rose2);font-size:20px}
+section{padding:90px 6vw 70px;min-height:60vh}
+.dark{background:var(--dark);color:#f3e6e2}
+.light{background:var(--cream)}
+h2{font-family:var(--hand);font-size:clamp(34px,6vw,52px);font-weight:500;margin-bottom:6px}
+.sub{opacity:.8;margin-bottom:34px}
+.heart{color:var(--rose)}
+.has-img{font-size:0!important} /* ha van kép, a ♡ jel eltűnik */
+.ph{background:linear-gradient(135deg,#6d4b3d,#c98a6b 55%,#3a2a35);background-size:cover;background-position:center;position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:30px}
+.ph:nth-child(3n+2){background-image:linear-gradient(160deg,#2a2742,#d4875f 70%,#f0b27a)}
+.ph:nth-child(3n){background-image:linear-gradient(135deg,#1c3a4a,#3c6e83 50%,#c9a56b)}
+/* ---------- 2/a Kezdőlap (a háttérkép a --hero-img változóból jön) ---------- */
+#kezdolap{min-height:100vh;display:flex;flex-direction:column;justify-content:center;color:#fff;padding-top:110px;
+background:linear-gradient(90deg,rgba(20,10,8,.75),rgba(20,10,8,.2)),var(--hero-img,linear-gradient(135deg,#6b3f23,#c07a3e 50%,#3a2418));background-size:cover;background-position:center}
+#kezdolap h1{font-family:var(--hand);font-weight:500;font-size:clamp(60px,14vw,130px);line-height:.95;transform:rotate(-4deg);margin-bottom:24px}
+#kezdolap p{font-size:20px;margin-bottom:26px}
+.btn{display:inline-block;padding:12px 26px;border-radius:30px;background:var(--cream);color:var(--ink);text-decoration:none;border:0;font:inherit;cursor:pointer;width:fit-content}
+/* ---------- 2/b Így kezdődött (polaroidok) ---------- */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1000px;margin:auto}
+.story p{margin-bottom:16px}
+.date{display:flex;gap:12px;align-items:center;margin:20px 0;font-size:13px;letter-spacing:.08em}
+.polas{position:relative;height:380px}
+.pola{position:absolute;background:#fff;padding:10px 10px 38px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.pola .ph{width:100%;height:100%}
+.pola:nth-child(1){width:230px;height:260px;left:5%;top:0;transform:rotate(-4deg)}
+.pola:nth-child(2){width:190px;height:220px;right:3%;top:150px;transform:rotate(5deg)}
+/* ---------- 2/c Pillanatok rács + felugró ablak ---------- */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1100px}
+.tile{cursor:pointer;border:0;background:none;color:inherit;text-align:left;font:inherit}
+.tile .ph{aspect-ratio:1;border:3px solid #fff;border-radius:3px;transition:.2s}
+.tile:hover .ph{transform:scale(1.03)}
+.tile small{display:block;margin-top:8px;font-size:12px}
+.tile b{font-weight:700;display:block;margin-top:6px;font-size:12px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.modal.on{display:flex}
+.modal>div{background:var(--paper);color:var(--ink);padding:28px;border-radius:6px;max-width:460px;width:100%;text-align:center}
+.modal h3{font-family:var(--hand);font-size:32px;font-weight:500}
+.modal button{margin-top:16px}
+/* ---------- 2/d 12 ok ---------- */
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:20px 50px;max-width:900px}
+.reasons div{display:flex;gap:14px;align-items:center}
+.reasons i{flex:none;width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--rose);display:grid;place-items:center}
+.reasons i span{transform:rotate(45deg);color:#fff;font:700 12px var(--sans);font-style:normal}
+/* ---------- 2/e Emlékezz erre (galéria) ---------- */
+.car{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;align-items:stretch}
+.car .ph{min-height:260px;border:8px solid #fff;border-bottom-width:30px}
+.card{background:var(--cream);color:var(--ink);padding:26px;border-radius:4px}
+.card h3{font-family:var(--hand);font-size:30px;font-weight:500}
+.ctl{display:flex;gap:14px;margin-top:20px;align-items:center}
+.ctl button{width:42px;height:42px;border-radius:50%;border:1px solid var(--rose2);background:none;color:#fff;font-size:20px;cursor:pointer}
+/* ---------- 2/f Következő 365 nap ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px}
+.cards div{background:var(--paper);border:1px solid #ecd3cd;padding:22px 14px;text-align:center;font-size:14px}
+.cards div span{font-size:28px;display:block}
+.cards b{display:block;margin:6px 0 4px}
+/* ---------- 2/g Záró üzenet ---------- */
+#utolso{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+#utolso .shape{aspect-ratio:1;max-width:360px;margin:auto;width:100%;border-radius:45% 55% 50% 50%/55% 45% 55% 45%;overflow:hidden}
+#utolso .shape .ph{width:100%;height:100%}
+#utolso p{margin-bottom:14px}
+footer{background:var(--dark);color:#777;text-align:center;padding:20px;font-size:13px}
+/* ---------- 4 Telefonos nézet ---------- */
+@media(max-width:760px){
+nav{gap:12px;font-size:12px;flex-wrap:wrap;padding-bottom:10px}nav .logo{display:none}
+section{padding:100px 6vw 50px}
+.story,.car,#utolso,.reasons{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr 1fr}
+.polas{height:340px}}
+/* ---------- 3 Extrák ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}.rv.in{opacity:1;transform:none}
+.light{background-image:radial-gradient(rgba(180,80,94,.07) 1px,transparent 1px);background-size:18px 18px}
+.pola::before{content:"";position:absolute;top:-12px;left:50%;width:76px;height:22px;transform:translateX(-50%) rotate(-3deg);background:rgba(233,185,182,.75);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.pola{transition:transform .4s}.pola:hover{transform:rotate(0) scale(1.04)!important;z-index:3}
+.fh{position:fixed;bottom:-30px;z-index:1;pointer-events:none;animation:up linear forwards}
+@keyframes up{to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+#intro{position:fixed;inset:0;z-index:100;background:var(--dark);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:20px;transition:opacity .9s}
+#intro.off{opacity:0;pointer-events:none}
+#intro h2{margin:0}
+.beat{font-size:72px;color:var(--rose);animation:beat 1.2s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}20%{transform:scale(1.25)}40%{transform:scale(1)}60%{transform:scale(1.15)}}
+#utolso .shape{border-radius:0;clip-path:url(#hc);max-width:400px}
+#utolso .btn{margin:6px 8px 0 0}
+#kezdolap{animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{background-position:0 0}to{background-position:100% 100%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}

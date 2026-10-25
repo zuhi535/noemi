@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>365 nap veled</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="intro"><div class="beat">♥</div><h2>Készen állsz?</h2><p>Egy kis meglepetés vár rád…</p><button class="btn" id="go">Megnyitás ♡</button></div>
+<svg width="0" height="0" style="position:absolute"><clipPath id="hc" clipPathUnits="objectBoundingBox"><path d="M0.5,0.95 C0.1,0.65 0,0.4 0,0.28 C0,0.1 0.12,0 0.27,0 C0.38,0 0.46,0.06 0.5,0.14 C0.54,0.06 0.62,0 0.73,0 C0.88,0 1,0.1 1,0.28 C1,0.4 0.9,0.65 0.5,0.95Z"/></clipPath></svg>
+<nav><span class="logo">♥</span><a href="#kezdolap">Kezdőlap</a><a href="#tortenet">A mi történetünk</a><a href="#okok">12 ok</a><a href="#emlek">Emlékezz erre!</a><a href="#terv">Tervek</a><a href="#utolso">Meglepetés</a></nav>
+
+<!-- A KÉPEK ÉS SZÖVEGEK a script.js elején, a CONFIG blokkban szerkeszthetők. Ezt a fájlt elég a szerkezet miatt módosítani. -->
+<section id="kezdolap" class="ph" style="justify-content:flex-start;align-items:flex-start;font-size:inherit">
+<h1>365 nap<br>veled <span style="font-size:.4em">♡</span></h1>
+<p>Egy év. Végtelen boldogság.</p>
+<a class="btn" href="#tortenet">Kezdjük előről! ♡</a>
+</section>
+
+<section id="tortenet" class="light">
+<div class="story">
+<div>
+<h2>Így kezdődött minden…</h2>
+<p>Nem tudom, vajon hogyan alakult volna az életünk, ha azon a bizonyos napon nem találkozunk, de azt igen, hogy 2025-ben valami különleges vette kezdetét.</p>
+<p>Egy találkozás, amely talán akkor még egyszerű pillanatnak tűnt, később mégis a közös történetünk első fejezetévé vált.</p>
+<div class="date">📅 2025. – ELSŐ TALÁLKOZÁS</div>
+<p style="font-family:var(--hand);font-size:26px">És ezzel elkezdődött a mi közös történetünk… ❤️</p>
+</div>
+<div class="polas"><div class="pola"><div class="ph" id="storyA">♡</div></div><div class="pola"><div class="ph" id="storyB">♡</div></div></div>
+</div>
+</section>
+
+<section id="pillanatok" class="dark">
+<h2>A pillanatok, amiket megőriznék <span class="heart">♡</span></h2>
+<p class="sub">Kattints egy képre, és olvass róla egy kis üzenetet!</p>
+<div class="grid" id="grid"></div>
+</section>
+
+<section id="okok" class="light">
+<h2>12 apró ok, amiért szeretlek <span class="heart">♡</span></h2>
+<p class="sub">Annyi mindenért szeretlek, hogy 12 ok talán nem is lenne elég… de most megpróbáltam összeszedni néhányat. ❤️</p>
+<div class="reasons" id="reasons"></div>
+</section>
+
+<section id="emlek" class="dark">
+<h2>Emlékezz erre!</h2>
+<p class="sub">Közös pillanatok, közös történetek, egy életen át.</p>
+<div class="car"><div class="ph" id="cph">♡</div>
+<div class="card"><small id="cdate"></small><h3 id="ctitle"></h3><p id="ctext"></p></div></div>
+<div class="ctl"><button id="prev" aria-label="Előző">‹</button><span id="cnt"></span><button id="next" aria-label="Következő">›</button></div>
+</section>
+
+<section id="terv" class="light">
+<h2>A következő 365 nap <span class="heart">♡</span></h2>
+<p class="sub">Már most annyi minden van, amit szeretnék még veled átélni. Helyek, ahová eljutunk, élmények, amiket együtt szerzünk, és apró pillanatok, amelyekből újabb közös emlékek születnek. ❤️</p>
+<div class="cards">
+<div><span>✈️</span><b>Egy újabb közös utazás</b>Egy új város, ismeretlen utcák, sok séta és rengeteg felfedeznivaló. Veled bárhová szívesen elindulok.</div>
+<div><span>⛰️</span><b>Egy kirándulás a természetben</b>Egy kis túrázás, gyönyörű tájak, hegyek, tavak és egy nap, amikor csak élvezzük, hogy együtt vagyunk.</div>
+<div><span>📷</span><b>Még több közös fénykép</b>Hogy évekkel később is visszanézhessük, mennyi mindent éltünk át együtt, és újra átélhessük a legszebb pillanatainkat.</div>
+<div><span>🌅</span><b>Újabb naplementék kettesben</b>Egy padon ülve, séta közben vagy egy számunkra ismeretlen helyen. Csak mi ketten, és egy újabb emlék, amit magunkkal vihetünk.</div>
+<div><span>🏠</span><b>Egy közös jövő építése</b>Apró tervek, közös célok és egyre több olyan dolog, amit együtt valósítunk meg. Egy hely, ahová mindketten örömmel térünk haza.</div>
+<div><span>♡</span><b>És még sok minden…</b>Még rengeteg hely vár ránk, sok új élményre kell szert tennünk, és millió közös pillanat áll előttünk. Nem tudom, mit tartogat számunkra a következő 365 nap, de azt igen, hogy szeretném veled átélni. Mert számomra nem az a legfontosabb, hogy hová jutunk el, hanem az, hogy közben foghatom a kezed. ❤️</div>
+</div>
+</section>
+
+<section id="utolso" class="dark">
+<div>
+<h2>Egy utolsó üzenet… <span class="heart">♡</span></h2>
+<p>Ha visszagondolok az összes közös pillanatunkra, az első találkozásunktól kezdve a közös utazásokon, sétákon és az apró, hétköznapi estéken át, mindig ugyanarra jutok: mennyire örülök, hogy az életünk egymáséhoz vezetett. ❤️<br>Köszönöm a mosolyokat, a nevetéseket, az öleléseket és az összes olyan pillanatot, amit talán akkor észre sem veszünk, mégis örökre a miénk marad.</p>
+<p>Nem tudom, hány új helyet fedezünk még fel együtt, hány naplementét nézünk végig egymás mellett, vagy milyen kalandok várnak ránk. De azt tudom, hogy még rengeteg közös emléket szeretnék veled gyűjteni.</p>
+<p>Szeretnék ott lenni melletted a boldog napokon, támogatni, amikor nehezebb, együtt nevetni veled a legbutább dolgokon, és újra meg újra megélni azokat az apró pillanatokat, amelyek miatt olyan jó, hogy vagy nekem.
+Ha újra kezdhetném, akkor is azt szeretném, hogy a történetünk egyszer ugyanígy egymásra találjon.
+Mert számomra nem az a fontos, hogy minden nap tökéletes legyen, hanem az, hogy a tökéletlen napokon is egymás mellett lehessünk.
+És ha egyszer, sok-sok év múlva visszanézünk ezekre a képekre, remélem, ugyanazzal a mosollyal gondolunk majd vissza rájuk, mint amilyennel most én írom ezeket a sorokat. </p>
+<p><b>Szeretlek. A közös emlékeinkért, a jelenünkért, és mindazért, ami még előttünk áll. Ma, holnap, és az összes napunkon, amit még együtt élhetünk át. ❤️</b></p>
+
+<button class="btn" id="burst">Nyomd meg! 💕</button><a class="btn" href="#kezdolap">Vissza a kezdőlapra</a><a class="btn" href="https://wokwi.com/projects/478879925887127553" target="_blank" rel="noopener noreferrer">Nézd meg a kis meglepetést! ❤️</a>
+</div>
+<div class="shape"><div class="ph" id="finalPhoto">♡</div></div>
+</section>
+<footer>Egy év. És még csak a kezdet… ♡</footer>
+
+<div class="modal" id="modal"><div><div class="ph" id="mph" style="aspect-ratio:4/3;margin-bottom:14px;border:6px solid #fff;border-bottom-width:24px">♡</div><small id="mdate"></small><h3 id="mtitle"></h3><p id="mtext"></p><button class="btn" id="mclose">Bezár</button></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
